@@ -15,7 +15,9 @@
  */
 package com.example.android.explicitintent;
 
+
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     /* Fields that will store our EditText and Button */
     private EditText mNameEntry;
     private Button mDoSomethingCoolButton;
-
+    public static final String EXTRA_MESSAGE = "com.example.android.explicitintent.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +42,8 @@ public class MainActivity extends AppCompatActivity {
          * do things like set the onClickListener which determines what happens when the button
          * is clicked.
          */
-        mDoSomethingCoolButton = (Button) findViewById(R.id.b_do_something_cool);
-        mNameEntry = (EditText) findViewById(R.id.et_text_entry);
-
+        final EditText dataEditText = findViewById(R.id.et_data);
+        Button mDoSomethingCoolButton = findViewById(R.id.bt_do_something_cool);
         /* Setting an OnClickListener allows us to do something when this button is clicked. */
         mDoSomethingCoolButton.setOnClickListener(new OnClickListener() {
 
@@ -60,21 +61,10 @@ public class MainActivity extends AppCompatActivity {
                  * clear as possible.
                  */
                 Context context = MainActivity.this;
-                String message = "Button clicked!\nTODO: Start a new Activity and pass some data.";
-                Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(context, ChildActivity.class);
+                intent.putExtra(EXTRA_MESSAGE, dataEditText.getText().toString());
+                startActivity(intent);
             }
         });
     }
 }
-
-// TODO (1) Use Android Studio's Activity wizard to` create a new Activity called ChildActivity
-
-// Do steps 2 - 5 in activity_child.xml
-// TODO (2) Change the ConstraintLayout to a FrameLayout and make appropriate adjustments
-// TODO (3) Add a TextView with an id value of @id/tv_display
-// TODO (4) Set the text to something that indicates this is default text being displayed
-// TODO (5) Make the text size a little larger
-
-// Do steps 6 & 7 in ChildActivity.java
-// TODO (6) Create a TextView field to display your message
-// TODO (7) Get a reference to your TextView in Java
