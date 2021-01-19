@@ -14,7 +14,19 @@
   limitations under the License.
 -->
 <resources>
+<!--    website -->
+    <string name="udacity_website">http://www.udacity.com</string>
+<!--    Explicit intent activities -->
     <string name="app_name">Explicit Intent</string>
     <string name="default_edit_text">Type something here.</string>
     <string name="default_text_display">default text</string>
+    <string name="button_explicit_intent">EXPLICIT INTENT</string>
+
+<!--    Implicit intent activities -->
+    <string name="button_implicit_intent">IMPLICIT INTENT</string>
+    <string name="button_open_website_string">OPEN WEBSITE</string>
+    <string name="button_open_location_in_map">OPEN LOCATION IN MAP</string>
+    <string name="button_share_text_content">SHARE TEXT CONTENT</string>
+    <string name="button_create_your_own">CREATE ALARM</string>
+
 </resources>

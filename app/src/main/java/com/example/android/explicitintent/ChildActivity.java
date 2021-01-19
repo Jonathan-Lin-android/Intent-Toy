@@ -10,8 +10,8 @@ public class ChildActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle bundle = getIntent().getExtras();
-        String message = bundle.getString(MainActivity.EXTRA_MESSAGE);
-
+//        String message = bundle.getString(MainActivity.EXTRA_MESSAGE);
+        String message = getIntent().getStringExtra(MainActivity.EXTRA_MESSAGE);
         setContentView(R.layout.activity_child);
 
         TextView displayTextView = findViewById(R.id.tv_display);

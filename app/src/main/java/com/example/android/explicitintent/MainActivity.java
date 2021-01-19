@@ -24,13 +24,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     /* Fields that will store our EditText and Button */
     private EditText mNameEntry;
     private Button mDoSomethingCoolButton;
+    private Button mImplicitIntent;
+
     public static final String EXTRA_MESSAGE = "com.example.android.explicitintent.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +43,10 @@ public class MainActivity extends AppCompatActivity {
          * do things like set the onClickListener which determines what happens when the button
          * is clicked.
          */
-        final EditText dataEditText = findViewById(R.id.et_data);
-        Button mDoSomethingCoolButton = findViewById(R.id.bt_do_something_cool);
+        mNameEntry = findViewById(R.id.et_data);
+        mDoSomethingCoolButton = findViewById(R.id.bt_explicit_intent);
+        mImplicitIntent = findViewById(R.id.bt_implicit_intent);
+
         /* Setting an OnClickListener allows us to do something when this button is clicked. */
         mDoSomethingCoolButton.setOnClickListener(new OnClickListener() {
 
@@ -62,8 +65,15 @@ public class MainActivity extends AppCompatActivity {
                  */
                 Context context = MainActivity.this;
                 Intent intent = new Intent(context, ChildActivity.class);
-                intent.putExtra(EXTRA_MESSAGE, dataEditText.getText().toString());
+                intent.putExtra(EXTRA_MESSAGE, mNameEntry.getText().toString());
                 startActivity(intent);
+            }
+        });
+
+        mImplicitIntent.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                startActivity(new Intent(MainActivity.this, ImplicitIntentActivity.class));
             }
         });
     }

@@ -19,8 +19,14 @@
         android:text="@string/default_edit_text" />
 
     <Button
-        android:id="@+id/bt_do_something_cool"
+        android:id="@+id/bt_explicit_intent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/button_explicit_intent" />
+
+    <Button
+        android:id="@+id/bt_implicit_intent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_implicit_intent" />
 </LinearLayout>

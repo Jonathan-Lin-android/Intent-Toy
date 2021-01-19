@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="32dp">
+
+    <Button
+        android:id="@+id/bt_open_website"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="openWebsite"
+        android:text="@string/button_open_website_string" />
+
+    <Button
+        android:id="@+id/bt_open_location_in_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="openLocation"
+        android:text="@string/button_open_location_in_map" />
+
+    <Button
+        android:id="@+id/bt_share_text_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="shareText"
+        android:text="@string/button_share_text_content" />
+
+    <Button
+        android:id="@+id/bt_create_your_own"
+        android:onClick="createAlarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/button_create_your_own" />
+</LinearLayout>
